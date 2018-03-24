@@ -189,11 +189,7 @@ $(function () {
     //添加交互式绘图对象的函数  
     function drawPloy(type) {  
 
-        // //临时存储
-        // var sourceTem = [];
-
         var sourceArr = [];
-        //console.log(output)
         //最后一个点的坐标
         var lastPoint;
         //定义一个事件监听  
@@ -240,18 +236,13 @@ $(function () {
        
         //绘制开始事件  
         draw.on('drawstart', function (evt) {   
-            // var output
             // //清除双击缩放
             // this.map.getInteractions().item(1).setActive(false);
             sketch = evt.feature; 
-            // console.log(sketch.getGeometry().getFirstCoordinate())
             //提示框的坐标  
             var tooltipCoord;
-            // var tooltipCoord = evt.getCoordinates();  
             //监听几何要素的change事件   
             listener = sketch.getGeometry().on('change', function (evt) {  
-                // console.log(evt.)
-                //The event target.  
                 //获取绘制的几何对象  
                 var geom = evt.target;  
                 if (geom instanceof ol.geom.Polygon) {  
