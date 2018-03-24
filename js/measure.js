@@ -131,8 +131,6 @@ $(function () {
                 map.removeOverlay(measureToolTem[j]);
             }
         }
-        console.log(map.getOverlays());
-        console.log(vector.getSource())
         sourceTem = [];
         measureToolTem = [];
         map.removeEventListener('pointermove')
@@ -146,24 +144,6 @@ $(function () {
         sourceTem = [];
         measureToolTem = [];
     }
-    
-    // function clear(){
-    //     if(featuresArr[drawCount]){
-    //         var currentArr = featuresArr[drawCount];
-    //         //获取 当前覆盖物的数组
-    //         var currentOverlay = measureInfoArr[drawCount];
-    //         for(var i = 0; i < currentArr.length; i++){
-    //             source.removeFeature(currentArr[i]);
-    //         }
-    //             //清除覆盖物
-    //         for(var j = 0; j < currentOverlay.length; j++){
-    //             map.removeOverlay(currentOverlay[j]);
-    //         }
-
-    //     }
-    // }
-
-
 
     //鼠标移动触发的函数  
     var pointerMoveHandler = function (evt) {  
