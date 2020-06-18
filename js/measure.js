@@ -286,9 +286,9 @@ $(function () {
             lastPoint = evt.coordinate;
           }
           //设置测量提示信息的位置坐标，用来确定鼠标点击后测量提示框的位置
+          measureTooltip.setPosition(evt.coordinate);
           //如果是第一次点击 且 为测量距离，则设置测量提示框的文本内容为起点
           if (count === 0 && type === "LineString") {
-            measureTooltip.setPosition(evt.coordinate);
             measureTooltipElement.innerHTML =
               '<div style = "position: absolute; font-size: 12px; font-family: MicrosoftYaHei; white-space: nowarp; height: 17px; background-color: #fff; color: #666; border: 1px solid #d4d4d4">' +
               '<div style = "padding: 0 4px; position: relative; display: inline; height: 17px; line-height: 140%; white-space: nowrap">' +
@@ -300,10 +300,8 @@ $(function () {
           //将该点要素添加到矢量数据源中
           featurePoint = new ol.Feature(point);
           source.addFeature(featurePoint);
-          if (type === "LineString") {
-            //更改测量提示框的样式，使测量提示框可见
-            measureTooltipElement.className = "tooltip tooltip-static";
-          }
+          //更改测量提示框的样式，使测量提示框可见
+          measureTooltipElement.className = "tooltip tooltip-static";
           //创建测量提示框
           createMeasureTooltip();
           //点击次数增加
