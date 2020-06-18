@@ -10,6 +10,8 @@
   bottom: 10px;  
   left: 10px;  
   z-index: 2000;  
+  padding: 20px;
+  background-color: rgba(74,144,226,0.3);
 }  
 
 .checkbox {  
@@ -48,3 +50,4 @@
   float: left;  
   margin-bottom: 10px;  
 }  
+
